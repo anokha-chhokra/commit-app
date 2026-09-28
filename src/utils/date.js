@@ -6,7 +6,7 @@ export function dateKey(d) {
     return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate())
 }
 
-export function todaykey(){
+export function todayKey(){
     return dateKey(new Date())
 }
 
