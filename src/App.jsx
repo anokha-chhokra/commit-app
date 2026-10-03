@@ -98,6 +98,29 @@ export default function App(){
       onEnableNotifications={requestPermission} />
 
       <TabBar active={activeTab} onChange={setActiveTab} />
+
+      <main>
+        {activeTab === 'timeline' && (
+          <TimelineView
+              events={events}
+              entries={entries}
+              onToggleEvent={toggleEvent}
+              onEditEvent={openEditEvent}
+              onEditEntry={openEditEntry}
+              onAddEvent={openNewEvent}          
+          />
+        )}
+        {activeTab === 'calendar' && (
+              <CalendarView 
+                  entries={entries}
+                  stats={stats}
+                  onSelectDate={handleSelectDate}
+              />
+        )}
+        {activeTab === 'badges' && <BadgesGrid badgesUnlocked={badgesUnlocked} />}
+      </main>
+
+      <Fab onClick={openNewEntry} />
     </div>
   )
 }
