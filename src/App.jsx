@@ -121,6 +121,23 @@ export default function App(){
       </main>
 
       <Fab onClick={openNewEntry} />
+      {composeOpen && (
+        <ComposeSheet
+        editing={composeEditing}
+        onClose={closeCompose}
+        onSave={handleSaveEntry}
+        onDelete={handleDeleteEntry}
+        />
+      )}
+
+      {eventSheetOpen && (
+        <EventSheet
+        editing={eventEditing}
+        onClose={closeEventSheet}
+        onSave={handleSaveEvent}
+        onDelete={handleDeleteEvent}
+        />
+      )}
     </div>
   )
 }
