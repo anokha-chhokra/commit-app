@@ -18,7 +18,7 @@ import ToastStack from './components/ToastStack'
 export default function App(){
   const {toasts, pushToast} = useToasts()
 
-  const {events, entries, badgesUnlocked, stats, todayPoints, themeMode, setThemeMode, journalReminderTime, toggleEvent, saveEvent, deleteEvent, saveEntry, deleteEntry,} = useJournalData((badges) => pushToast(`🏅 Badge unlocked: ${badge.name}`))
+  const {events, entries, badgesUnlocked, stats, todayPoints, themeMode, setThemeMode, journalReminderTime, toggleEvent, saveEvent, deleteEvent, saveEntry, deleteEntry,} = useJournalData((badge) => pushToast(`🏅 Badge unlocked: ${badge.name}`))
 
   useResolvedMode(themeMode)
 
@@ -66,7 +66,7 @@ export default function App(){
     setEventSheetOpen(false)
     setEventEditing(null)
   }
-  function handleSaveEvent(eve){
+  function handleSaveEvent(ev){
     saveEvent(ev);
     closeEventSheet()
   }

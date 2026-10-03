@@ -60,7 +60,7 @@ export default function EventSheet({ editing, onClose, onSave, onDelete }) {
 
                 {editing && (
                     <div className="del-row">
-                        <button type="button" className="btn dnager" onClick={handleDeleteClick}>
+                        <button type="button" className="btn danger" onClick={handleDeleteClick}>
                             {confirmDelete? 'TAP AGAIN TO CONFIRM': 'DELETE EVENT'}
                         </button>
                     </div>
